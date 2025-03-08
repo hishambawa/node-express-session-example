@@ -3,6 +3,8 @@ const session = require('express-session')
 
 const AuthDao = require('./dao/authDao')
 const AuthService = require('./services/authService')
+const sessionAuthMiddleware = require('./middleware/sessionAuthMiddleware')
+const routeAuthMiddleware = require('./middleware/routeAuthMiddleware')
 
 const authDao = new AuthDao()
 const authService = new AuthService(authDao)
@@ -31,21 +33,13 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/login.html')
 });
 
-app.get('/home', (req, res) => {
-    if(req.session.user) {
-        res.sendFile(__dirname + '/views/home.html');
-    } else {
-        res.redirect('/');
-    }
+app.get('/home', routeAuthMiddleware, (req, res) => {
+    res.sendFile(__dirname + '/views/home.html');
 });
 
 // add api routes
-app.get('/api/user', (req, res) => {
-    if(req.session.user) {
-        res.status(200).json(req.session.user);
-    } else {
-        res.status(401).json({message: 'Unauthorized'});
-    }
+app.get('/api/user', sessionAuthMiddleware, (req, res) => {
+    res.status(200).json(req.session.user);
 });
 
 app.post('/api/register', async (req, res) => {
