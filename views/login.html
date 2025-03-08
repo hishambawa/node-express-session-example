@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Express Session Demo</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma-toast/2.4.1/bulma-toast.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <div class="section">
+        <div class="container">
+            <h1 class="title has-text-centered">Login</h1>
+
+            <div class="is-flex is-justify-content-center mb-6 mt-6">
+                <div class="form">
+                    <div class="field">
+                        <label class="label">Username</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Enter your username" id="username">
+                            <p class="help is-danger is-hidden" id="user-not-found">User not found</p>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Password</label>
+                        <div class="control">
+                            <input class="input" type="password" placeholder="Enter your password" id="password">
+                            <p class="help is-danger is-hidden" id="invalid-password">Invalid password</p>
+                        </div>
+                    </div>
+                    
+                    <div class="field is-grouped mt-5 is-justify-content-center">
+                        <div class="control">
+                            <input type="text" id="student-id" hidden>
+                            <button class="button is-light is-outlined is-rounded"
+                                    id="submit-btn"
+                                    onclick="submitForm()">Submit</but>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,8 @@
+.notification.is-success {
+    color: white !important;
+}
+
+.form {
+    width: 100%;
+    max-width: 500px;
+}

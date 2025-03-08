@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Express Session Demo</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma-toast/2.4.1/bulma-toast.min.js"></script>
+    <script src="home.js"></script>
+</head>
+<body>
+
+    <div class="section">
+        <div class="container">
+
+            <div class="is-flex is-justify-content-center is-align-items-center is-flex-direction-column mb-6 mt-6">
+                <h1 class="title has-text-centered">Welcome <span id="username"></span></h1>
+
+                <div class="form">
+                    <div class="field is-grouped mt-5 is-justify-content-center">
+                        <div class="control">
+                            <button class="button is-light is-outlined is-rounded"
+                                    id="logout-btn"
+                                    onclick="logout()">Logout</but>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    
+</body>
+</html>
